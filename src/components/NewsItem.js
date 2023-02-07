@@ -6,14 +6,23 @@ export class NewsItem extends Component {
     return (
       <div className="my-3">
         <div className="card" style={{ width: "18rem" }}>
-          <img src={imageUrl} className="card-img-top" alt="..." />
+          <img
+            src={
+              !imageUrl
+                ? "https://s3.cointelegraph.com/uploads/2023-02/6b8ef98c-fc1a-42bd-b7ed-b4a6e8f67eb1.jpg"
+                : imageUrl
+            }
+            className="card-img-top"
+            alt="..."
+          />
           <div className="card-body">
             <h5 className="card-title">{title}...</h5>
             <p className="card-text">{description}...</p>
             <a
               href={newsUrl}
               target={"_blank"}
-              className="btn btn-sm btn-primary">
+              className="btn btn-sm btn-dark"
+              rel="noreferrer">
               Read More
             </a>
           </div>
